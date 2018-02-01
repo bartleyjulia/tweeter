@@ -1,0 +1,32 @@
+section.new-tweet {
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+h2 {
+  border-bottom: 1px solid black;
+
+}
+
+input {
+
+}
+
+textarea {
+  width: 100%;
+  padding: 4px;
+
+}
+
+span.counter {
+  position: relative;
+  float: right;
+}
+
+/*span.negative {
+  color: red;
+}*/
+span.negative {
+      color: red;
+    }
