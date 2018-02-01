@@ -29,7 +29,7 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main id="tweets-container" class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
           <form action='/tweets' method="POST">
@@ -38,12 +38,12 @@
             <span id="count" class="counter" class="negative">140</span>
           </form>
       </section>
-      <section class="latest-tweets" class="overlay">
+      <section>
         <article>
           <header class="clearfix"><img src="" class="avatar"><text class="name"> Person tweeting </text> <text class="handler"> @handler </text></header>
           <content><text class="tweetcontent"> Tweet text </text></content>
           <footer class="clearfix"><text class="datetweeted"> number of days</text>
-            <div>  <i class="fas fa-flag"></i>
+            <div class="flags">  <i class="fas fa-flag"></i>
               <i class="fas fa-retweet"></i>
               <i class="fas fa-heart"></i>
             </div>

@@ -18,8 +18,8 @@ header {
 }
 header .avatar {
   float: left;
-  height: 50px;
-  width: 45px;
+  height: 52px;
+  width: 52px;
   margin: 8px;
 }
 
@@ -58,7 +58,7 @@ footer .datetweeted {
   width: 50%;
 }
 
-footer div {
+.flags {
   float: right;
   padding: 10px 10px;
 }
