@@ -4,49 +4,35 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
 
-  function createTweetElement(data) {
+
+  function createTweetElement(tweet) {
+    let $tweet = $('<article>').addClass('tweet');
     // adds image data to header
     let image = $('<img>').addClass('avatar');
-    image.attr('src', data["user"]["avatars"]["small"]);
+    image.attr('src', tweet["user"]["avatars"]["small"]);
     let header = $('<header>').addClass('clearfix');
     header.append(image);
     // adds handle data to header
     let handler = $('<text>').addClass('handler');
-    handler.text(data["user"]["handle"]);
+    handler.text(tweet["user"]["handle"]);
     header.append(handler);
     // adds name data to header
     let name = $('<text>').addClass('name');
-    name.text(data["user"]["name"]);
+    name.text(tweet["user"]["name"]);
     header.append(name);
     //adds header items to article
-    let article = $('<article>');
-    article.append(header);
+    $tweet.append(header);
     //adds tweet data to content
     let tweetWords = $('<text>').addClass('tweetcontent');
-    tweetWords.text( data["content"]["text"]);
+    tweetWords.text( tweet["content"]["text"]);
     let tweetText = $('<content>');
     tweetText.append(tweetWords);
     //adds content to article
-    article.append(tweetText);
+    $tweet.append(tweetText);
     //adds date to footer
     let timeData = $('<text>').addClass('datetweeted');
-    timeData.text(data["created_at"]);
+    timeData.text(tweet["created_at"]);
     let footer = $('<footer>').addClass('clearfix');
     footer.append(timeData);
     //adds counter to footer
@@ -57,29 +43,52 @@ $(document).ready(function() {
     buttons.append(flag);
     buttons.append(retweet);
     buttons.append(heart);
-    console.log(buttons.html());
     //adds buttons to footer
     footer.append(buttons);
-    console.log(footer.html());
     //adds footer to article
-    article.append(footer);
+    $tweet.append(footer);
 
-    let section = $('<section>').addClass('tweets-container');
-    section.append(article);
-
-    return section;
-
+    return $tweet;
   }
 
 
-  var $tweet = createTweetElement(tweetData);
+  function renderTweets(tweets) {
+    let $section = $('<section>').addClass('tweets-container');
+    // loops through tweets
+    for ( let user of tweets) {
+      // calls createTweetElement for each tweet
+      let tweetarticle = createTweetElement(user);
+      // takes return value and appends it to the tweets container
+      $section.append(tweetarticle);
+    }
+    return $section;
+  }
 
-  // Test / driver code (temporary)
-  console.log($tweet);
-  // to see what it looks like
-  $('#tweets-container').append($tweet);
-  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
+  $('#tweets-container').on('submit', function (event){
+    event.preventDefault();
+    let tweetText = $(this).children().find('textarea').val();
+    if (tweetText.length > 140) {
+      alert("Your tweet is longer than 140 characters");
+    }
+    if (tweetText.length <= 0) {
+      alert("Tweet text invalid");
+    }
+    let newTweet = $('#tweets-container form').serialize();
+    console.log(newTweet);
+  });
 
+  function loadTweets() {
+
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function(moreTweets) {
+        let $allTweets = renderTweets(moreTweets);
+        $('#tweets-container').append($allTweets);
+      }
+    });
+  }
+  loadTweets();
 
 });
