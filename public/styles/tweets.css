@@ -61,7 +61,13 @@ footer .datetweeted {
 .flags {
   float: right;
   padding: 10px 10px;
+  opacity: 0.4;
 }
+
+.flags:hover {
+  opacity: 1;
+}
+
 .clearfix::after {
     content: "";
     clear: both;

@@ -59,9 +59,21 @@ $(document).ready(function() {
       // calls createTweetElement for each tweet
       let tweetarticle = createTweetElement(user);
       // takes return value and appends it to the tweets container
-      $section.append(tweetarticle);
+      $section.prepend(tweetarticle);
     }
     return $section;
+  }
+
+
+  function loadTweets() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function(moreTweets) {
+        let $allTweets = renderTweets(moreTweets);
+        $('#tweets-container').append($allTweets);
+      }
+    });
   }
 
 
@@ -76,19 +88,12 @@ $(document).ready(function() {
     }
     let newTweet = $('#tweets-container form').serialize();
     console.log(newTweet);
+
+    $.post('/tweets', newTweet).done(function(res) {
+
+      $('.tweets-container').prepend(createTweetElement(res.tweet));
+    });
   });
 
-  function loadTweets() {
-
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      success: function(moreTweets) {
-        let $allTweets = renderTweets(moreTweets);
-        $('#tweets-container').append($allTweets);
-      }
-    });
-  }
   loadTweets();
-
 });
