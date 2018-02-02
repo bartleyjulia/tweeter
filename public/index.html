@@ -25,12 +25,13 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
+      <section class="compose-button"><text>Compose</text></section>
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main id="tweets-container" class="container">
-      <section class="new-tweet">
+      <section class="new-tweet" style="display: none">
         <h2>Compose Tweet</h2>
           <form action='/tweets' method="POST">
             <textarea name="text" placeholder="What are you humming about?"></textarea>

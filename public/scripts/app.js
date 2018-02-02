@@ -76,6 +76,18 @@ $(document).ready(function() {
     });
   }
 
+  $("#nav-bar section.compose-button" ).on('dblclick', function(event){
+    $('#tweets-container section.new-tweet').slideToggle(function(event) {
+    let textarea = $('#tweets-container section.new-tweet').children().find('textarea');
+    textarea.focus();
+    });
+
+  });
+
+  $("#nav-bar section.compose-button" ).on('click', function(event){
+    console.log("it works");
+    $('#tweets-container section.new-tweet').slideUp();
+  });
 
   $('#tweets-container').on('submit', function (event){
     event.preventDefault();
@@ -93,6 +105,8 @@ $(document).ready(function() {
 
       $('.tweets-container').prepend(createTweetElement(res.tweet));
     });
+
+
   });
 
   loadTweets();
