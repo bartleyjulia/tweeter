@@ -32,7 +32,8 @@ $(document).ready(function() {
     $tweet.append(tweetText);
     //adds date to footer
     let timeData = $('<text>').addClass('datetweeted');
-    timeData.text(tweet["created_at"]);
+    let timeAgo = moment(tweet["created_at"]).fromNow();
+    timeData.text(timeAgo);
     let footer = $('<footer>').addClass('clearfix');
     footer.append(timeData);
     //adds counter to footer
@@ -76,9 +77,10 @@ $(document).ready(function() {
     });
   }
 
+  let textarea = $('#tweets-container section.new-tweet').children().find('textarea');
+
   $("#nav-bar section.compose-button" ).on('dblclick', function(event){
     $('#tweets-container section.new-tweet').slideToggle(function(event) {
-    let textarea = $('#tweets-container section.new-tweet').children().find('textarea');
     textarea.focus();
     });
 
@@ -102,11 +104,9 @@ $(document).ready(function() {
     console.log(newTweet);
 
     $.post('/tweets', newTweet).done(function(res) {
-
       $('.tweets-container').prepend(createTweetElement(res.tweet));
     });
-
-
+    textarea.val("");
   });
 
   loadTweets();
