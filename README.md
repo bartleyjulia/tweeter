@@ -1,10 +1,10 @@
-#Tweeter Project Read-me file
+#Tweeter Project
 
-### "A completely original, never before seen social media concept" - _The San Francisco Chronicle_
+## "A completely original, never before seen social media concept" - _The San Francisco Chronicle_
 
-### "Set to revolutionize the world of communication" _Forbes_
+## "Set to revolutionize the world of communication" _Forbes_
 
-### "If the medium is the message, Tweeter is the way" _New York Times _
+## "If the medium is the message, Tweeter is the way" _New York Times_
 
 >Disclaimer: The views and opinions expressed above are may or not be atttibuted to the authors and do not
 necessarily reflect the official policy or position of any agency of Tweeter Inc.
