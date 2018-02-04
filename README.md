@@ -1,10 +1,12 @@
-!["First Photo"](https://github.com/bartleyjulia/tweeter/blob/master/docs/firstphoto.png)
 
 ## "A completely original, never before seen social media concept" - _The San Francisco Chronicle_
 
 ## "Set to revolutionize the world of communication"  _Forbes Magazine_
 
 ## "If the medium is the message, Tweeter is the way" _The New York Times_
+
+!["First Photo"](https://github.com/bartleyjulia/tweeter/blob/master/docs/firstphoto.png)
+
 
 >Disclaimer: The views and opinions expressed above are may or not be atttibuted to the authors and do not
 necessarily reflect the official policy or position of any agency of Tweeter Inc.
