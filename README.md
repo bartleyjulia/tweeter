@@ -1,4 +1,4 @@
-
+!["First Photo"](https://github.com/bartleyjulia/tweeter/blob/master/docs/firstphoto.png)
 
 ## "A completely original, never before seen social media concept" - _The San Francisco Chronicle_
 
@@ -9,9 +9,13 @@
 >Disclaimer: The views and opinions expressed above are may or not be atttibuted to the authors and do not
 necessarily reflect the official policy or position of any agency of Tweeter Inc.
 
+
 ## How it works
 
 Hit the compose button, share your thoughts in the text field, and hit submit to broadcast your opinion on the internet.
+
+
+!["Second Photo"](https://github.com/bartleyjulia/tweeter/blob/master/docs/compose%20photo.png)
 
 ## Dependencies
 - md5
