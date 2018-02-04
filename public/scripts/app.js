@@ -78,17 +78,12 @@ $(document).ready(function() {
   }
 
   let textarea = $('#tweets-container section.new-tweet').children().find('textarea');
-
-  $("#nav-bar section.compose-button" ).on('dblclick', function(event){
+  let counter = $('#tweets-container section.new-tweet').children().find('span');
+  $("#nav-bar section.compose-button" ).on('click', function(event){
     $('#tweets-container section.new-tweet').slideToggle(function(event) {
-    textarea.focus();
+      textarea.focus();
     });
 
-  });
-
-  $("#nav-bar section.compose-button" ).on('click', function(event){
-    console.log("it works");
-    $('#tweets-container section.new-tweet').slideUp();
   });
 
   $('#tweets-container').on('submit', function (event){
@@ -96,17 +91,18 @@ $(document).ready(function() {
     let tweetText = $(this).children().find('textarea').val();
     if (tweetText.length > 140) {
       alert("Your tweet is longer than 140 characters");
-    }
-    if (tweetText.length <= 0) {
-      alert("Tweet text invalid");
-    }
-    let newTweet = $('#tweets-container form').serialize();
-    console.log(newTweet);
 
-    $.post('/tweets', newTweet).done(function(res) {
-      $('.tweets-container').prepend(createTweetElement(res.tweet));
-    });
-    textarea.val("");
+    } else if (tweetText.length <= 0) {
+      alert("Tweet text invalid");
+    } else {
+      let newTweet = $('#tweets-container form').serialize();
+
+      $.post('/tweets', newTweet).done(function(res) {
+        $('.tweets-container').prepend(createTweetElement(res.tweet));
+      });
+      textarea.val("");
+      counter.text("140");
+    }
   });
 
   loadTweets();

@@ -22,6 +22,7 @@ textarea {
 span.counter {
   position: relative;
   float: right;
+  counter-reset: 140;
 }
 
 /*span.negative {
