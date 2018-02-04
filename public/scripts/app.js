@@ -86,6 +86,7 @@ $(document).ready(function() {
 
   });
 
+// Submit function for new tweets
   $('#tweets-container').on('submit', function (event){
     event.preventDefault();
     let tweetText = $(this).children().find('textarea').val();
@@ -100,6 +101,7 @@ $(document).ready(function() {
       $.post('/tweets', newTweet).done(function(res) {
         $('.tweets-container').prepend(createTweetElement(res.tweet));
       });
+      // Resets counter and text area
       textarea.val("");
       counter.text("140");
     }

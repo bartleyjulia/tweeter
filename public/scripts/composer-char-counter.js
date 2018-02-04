@@ -1,3 +1,6 @@
+
+// Function for counting characters, adding the class of negative
+// if count is too high which prompts CSS style to turn the counter red.
 $(document).ready(function() {
   $('textarea').on("keyup", function(event) {
     let char = $(this).val();

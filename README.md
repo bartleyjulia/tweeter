@@ -1,17 +1,17 @@
-# Tweeter Project
+#Tweeter Project Read-me file
 
-Tweeter is a simple, single-page Twitter clone.
+### "A completely original, never before seen social media concept" - _The San Francisco Chronicle_
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+### "Set to revolutionize the world of communication" _Forbes_
 
-## Getting Started
+### "If the medium is the message, Tweeter is the way" _New York Times _
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+>Disclaimer: The views and opinions expressed above are may or not be atttibuted to the authors and do not
+necessarily reflect the official policy or position of any agency of Tweeter Inc.
 
-## Dependencies
+## How it works
 
-- Express
-- Node 5.10.x or above
+Hit the compose button, share your thoughts in the text field, and hit submit to broadcast your opinion on the internet.
+
+
+**Tweeter - making the world a better place, 140 characters at a time**

@@ -9,9 +9,7 @@ h2 {
 
 }
 
-input {
 
-}
 
 textarea {
   width: 100%;
@@ -25,9 +23,6 @@ span.counter {
   counter-reset: 140;
 }
 
-/*span.negative {
-  color: red;
-}*/
 span.negative {
       color: red;
     }
