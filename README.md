@@ -1,3 +1,4 @@
+Link to Heroku deployment of app: (http://bit.ly/tweeter_jb)
 
 ## "A completely original, never before seen social media concept" - _The San Francisco Chronicle_
 
